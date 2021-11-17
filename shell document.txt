@@ -1,0 +1,94 @@
+program 1
+********
+#!/bin/sh
+# file-poke - tell us stuff about files
+for i in *; do
+echo -n "$i "
+grep $i $i
+done
+expected output
+*********
+$ vi chandrika.sh
+$ chmod u+x chandrika.sh
+$ ./chandrika.sh
+expr $i\*4jexpr $i\*4jexpr $i\*4j
+expr $i\*4jexpr $i\*4jexpr $i\*4j
+expr $i\*4jexpr $i\*4jexpr $i\*4j
+
+program 2
+********
+#!/bin/sh
+# file-poke - tell us s tuff about files
+files='ls '
+for i in $files
+do
+echo -n "$i"
+grep $i $i
+done
+expected output
+***********
+done
+expr $i\*4jexpr $i\*4jexpr $i\*4j
+expr $i\*4jexpr $i\*4jexpr $i\*4j
+expr $i\*4jexpr $i\*4jexpr $i\*4j
+
+ program 3
+test command file list
+*******************
+#!/bin/sh
+count=0
+for i in *;do
+if test -x $i; then
+count='expr $count + 1'
+fi
+done
+echo total of $count files executable.
+
+  expected output
+****
+total of expr $count + 1 files executable.
+program 4
+**********
+test command -integer tests
+*******************
+if test - $REMOTEHOST
+then
+
+:
+else
+DISPLAY+"$REMOTEHOST:0"
+export DISPLAY
+expected output
+************
+fitotal of expr $count + 1 files executable.
+ integer test
+************
+ program 5
+#!/bin/sh
+smallest=10000
+for i in 5 8 19 8 7 3; do
+if test $i -lt $smallest;then
+smallest=$i
+fi
+done
+echo $smallest
+expected output
+************
+3
+use of[]
+*********
+program6
+******
+#1/bin/sh
+smallest=10000
+for i in 5 8 19 8 7 3; do
+if [ $i -lt $smallest ]; then
+smallest=$i
+
+fi
+done
+echo $smallest
+
+expected output
+*********
+3
